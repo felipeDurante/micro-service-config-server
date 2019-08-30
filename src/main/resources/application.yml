@@ -1,0 +1,11 @@
+server:
+  port: 9090
+spring:
+  cloud:
+    config:
+      server:
+        bootstrap: true
+        native:
+          searchLocations: file://C://tico//git_tico//micro-services//
+  profiles:
+    active: native
