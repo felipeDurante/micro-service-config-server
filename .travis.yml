@@ -13,7 +13,6 @@ script:
 deploy:
   provider: script
   script:
-    docker login docker.io
     docker tag docker-config-server:latest 0biwanken0bi/docker-config-server:latest;
     docker push 0biwanken0bi/docker-config-server;
   on:
