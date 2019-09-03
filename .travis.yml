@@ -10,9 +10,12 @@ before_install:
   - echo "We are in the Docker folder!"
 script:
   - docker-compose build
+before_deploy:
+  echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
 deploy:
   provider: script
   script:
+    docker tag docker-config-server:latest 0biwanken0bi/docker-config-server:latest;
     docker push 0biwanken0bi/docker-config-server;
   on:
     branch: master
