@@ -1,11 +1,13 @@
 server:
-  port: 8080
+  port: 9090
 spring:
   cloud:
     config:
       server:
         bootstrap: true
-        native:
-          searchLocations: file://C://tico//git_tico//micro-services//
-  profiles:
-    active: native
+        git:
+          uri: https://github.com/felipeDurante/repositorio-config-files
+
+#  profiles:
+#    active: native
+
